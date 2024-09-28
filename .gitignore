@@ -1,0 +1,6 @@
+node_modules
+db/lows/*
+!db/lows/.gitkeep
+db/migrations/*
+!db/migrations/.gitkeep
+.env
