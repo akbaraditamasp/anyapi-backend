@@ -5,6 +5,21 @@ import { createId } from "@paralleldrive/cuid2";
 
 const domain = Router();
 
+domain.get("/ask", async (req, res) => {
+  const { domain } = await vine.validate({
+    schema: vine.object({
+      domain: vine.string(),
+    }),
+    data: req.body,
+  });
+
+  await Domain.findOneByOrFail({ name: domain });
+
+  return res.json({
+    status: "OK",
+  });
+});
+
 domain.post("/", async (req, res) => {
   const { name } = await vine.validate({
     schema: vine.object({

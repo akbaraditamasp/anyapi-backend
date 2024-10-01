@@ -20,4 +20,4 @@ app.use(
   operate
 );
 
-app.use("/api", mainDomain, domain);
+app.use("/api/domain", mainDomain, domain);
