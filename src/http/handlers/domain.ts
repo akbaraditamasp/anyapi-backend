@@ -10,7 +10,7 @@ domain.get("/ask", async (req, res) => {
     schema: vine.object({
       domain: vine.string(),
     }),
-    data: req.body,
+    data: req.query,
   });
 
   await Domain.findOneByOrFail({ name: domain });
